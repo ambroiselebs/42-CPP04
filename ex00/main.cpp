@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:08:33 by aberenge          #+#    #+#             */
-/*   Updated: 2025/06/26 21:13:49 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:29:09 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int main()
 	std::cout << meta->getType() << " " << std::endl;
 
 	std::cout << std::endl << "--- makeSound test ---" << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound(); //will output the dog sound!
-	meta->makeSound(); //will output generic animal sound
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
 
 	std::cout << std::endl << "--- Destruction ---" << std::endl;
 	delete meta;
@@ -49,15 +49,13 @@ int main()
 
 	std::cout << std::endl << "--- Wrong makeSound test ---" << std::endl;
 	wrongMeta->makeSound();
-	wrongCat->makeSound(); // Should output WrongAnimal sound!
-
+	wrongCat->makeSound();
 	std::cout << std::endl << "--- Wrong Destruction ---" << std::endl;
 	delete wrongMeta;
 	delete wrongCat;
 
 	std::cout << std::endl << "=== ADDITIONAL TESTS ===" << std::endl;
 
-	// Test with array of Animal pointers
 	std::cout << std::endl << "--- Array test ---" << std::endl;
 	const Animal* animals[4];
 	animals[0] = new Animal();
@@ -76,7 +74,6 @@ int main()
 	for (int k = 0; k < 4; k++)
 		delete animals[k];
 
-	// Test direct object creation (no pointers)
 	std::cout << std::endl << "--- Direct objects test ---" << std::endl;
 	Animal directAnimal;
 	Dog directDog;
