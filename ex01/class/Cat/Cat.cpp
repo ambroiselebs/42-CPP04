@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 21:05:58 by aberenge          #+#    #+#             */
-/*   Updated: 2025/06/26 21:43:34 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:48:02 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ Cat& Cat::operator=(const Cat &other)
 {
 	std::cout << "Cat = called" << std::endl;
 	if (this != &other)
+	{
 		this->type = other.type;
+		delete this->brain;
+		this->brain = new Brain(*(other.brain));
+	}
 	return (*this);
 }
 

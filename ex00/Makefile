@@ -1,4 +1,4 @@
-NAME = clapTrap
+NAME = Animal
 
 SRC = main.cpp \
 		class/Animal/Animal.cpp class/Cat/Cat.cpp class/Dog/Dog.cpp \

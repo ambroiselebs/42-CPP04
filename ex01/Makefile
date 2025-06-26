@@ -1,7 +1,8 @@
-NAME = clapTrap
+NAME = Animal
 
 SRC = main.cpp \
-		class/Animal/Animal.cpp class/Cat/Cat.cpp class/Dog/Dog.cpp
+		class/Animal/Animal.cpp class/Cat/Cat.cpp class/Dog/Dog.cpp \
+		class/Brain/Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++

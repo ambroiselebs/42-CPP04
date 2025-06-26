@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:56:42 by aberenge          #+#    #+#             */
-/*   Updated: 2025/06/26 21:42:16 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:48:17 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ Dog& Dog::operator=(const Dog &other)
 {
 	std::cout << "Dog = called" << std::endl;
 	if (this != &other)
+	{
 		this->type = other.type;
+		delete this->brain;
+		this->brain = new Brain(*(other.brain));
+	}
 	return (*this);
 }
 
